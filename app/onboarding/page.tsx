@@ -22,7 +22,7 @@ export default function Onboarding() {
         </p>
 
         <div className="mt-10">
-          <Link href="/onboarding/profile">
+          <Link href="/login">
             <Button text="Let's Begin →" />
           </Link>
         </div>

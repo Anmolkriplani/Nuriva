@@ -7,6 +7,12 @@ type UserRole = "patient" | "caregiver" | "guardian" | "";
 type OnboardingContextType = {
   role: UserRole;
   setRole: (role: UserRole) => void;
+
+  supportNeeds: string[];
+  setSupportNeeds: (needs: string[]) => void;
+
+  conditions: string[];
+  setConditions: (conditions: string[]) => void;
 };
 
 const OnboardingContext = createContext<OnboardingContextType | undefined>(
@@ -19,9 +25,20 @@ export function OnboardingProvider({
   children: React.ReactNode;
 }) {
   const [role, setRole] = useState<UserRole>("");
+  const [supportNeeds, setSupportNeeds] = useState<string[]>([]);
+  const [conditions, setConditions] = useState<string[]>([]);
 
   return (
-    <OnboardingContext.Provider value={{ role, setRole }}>
+    <OnboardingContext.Provider
+      value={{
+        role,
+        setRole,
+        supportNeeds,
+        setSupportNeeds,
+        conditions,
+        setConditions,
+      }}
+    >
       {children}
     </OnboardingContext.Provider>
   );

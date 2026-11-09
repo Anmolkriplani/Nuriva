@@ -79,7 +79,7 @@ export default function Profile() {
           </Link>
 
           {role && (
-            <Link href="/onboarding/health">
+            <Link href="/onboarding/patient-welcome">
               <Button text="Continue →" />
             </Link>
           )}
